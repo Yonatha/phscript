@@ -1,0 +1,93 @@
+{
+	"name": "PhScript",
+	"displayName": "PhScript",
+	"author": "Phoebus Tecnologia",
+	"icon": "images/phoebustecnologia.png",
+	"repository": "https://yonatha@bitbucket.org/yonatha/phscript-vscode.git",
+	"publisher": "Phoebus-Tecnologia",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.31.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.generateModel"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.generateModel",
+				"title": "PhScript - Generate Model"
+			}
+		],
+		"menus": {
+			"editor/context": [{
+				"command": "extension.generateModel",
+				"alt": "extension.generateModel",
+				"group": "navigation"
+			}]
+		},
+		"languages": [
+			{
+				"id": "phscript",
+				"extensions": [
+					".wmls"
+				],
+				"configuration": "./src/language-configuration.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "phscript",
+				"path": "./snippets/phscript.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "phscript",
+				"scopeName": "source.phscript",
+				"path": "./syntaxes/phscript.tmLanguage.json",
+				"embeddedLanguages": {
+					"source.js": "javascript",
+					"meta.embedded.block.json": "json",
+					"meta.embedded.block.javascript": "javascript"
+				}
+			},
+			{
+				"language": "phscript",
+				"scopeName": "source.js",
+				"path": "./syntaxes/JavaScript.tmLanguage.json",
+				"embeddedLanguages": {
+					"meta.tag.js": "jsx-tags",
+					"meta.tag.without-attributes.js": "jsx-tags",
+					"meta.tag.attributes.js": "javascript",
+					"meta.embedded.expression.js": "javascript"
+				},
+				"tokenTypes": {
+					"entity.name.type.instance.jsdoc": "other",
+					"entity.name.function.tagged-template": "other",
+					"meta.import string.quoted": "other",
+					"variable.other.jsdoc": "other"
+				}
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.25",
+		"tslint": "^5.8.0",
+		"@types/node": "^8.10.25",
+		"@types/mocha": "^2.2.42",
+		"request-promise": "4.2.2"
+	}
+}

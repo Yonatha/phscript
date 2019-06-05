@@ -1,0 +1,197 @@
+{
+    "For Loop": {
+        "prefix": "for",
+        "body": [
+            "for (var i = 0; i < PhList.count(${1:list}); i++) {",
+            "\tvar ${3:element} = ${1:list}[i];",
+            "\t$4",
+            "}"
+        ],
+        "description": "For Loop"
+    },
+    "If Statement": {
+        "prefix": "if",
+        "body": [
+            "if (${1:condition}) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "If Statement"
+    },
+    "If-Else Statement": {
+        "prefix": "ifelse",
+        "body": [
+            "if (${1:condition}) {",
+            "\t$0",
+            "} else {",
+            "\t",
+            "}"
+        ],
+        "description": "If-Else Statement"
+    },
+    "While Statement": {
+        "prefix": "while",
+        "body": [
+            "while (${1:condition}) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "While Statement"
+    },
+    "use url": {
+        "prefix": "use url",
+        "body": [
+            "use url ${0:PackageName}          \"package://file.wmls}\";"
+        ],
+        "description": "Import external package."
+    },
+    "Region Start": {
+        "prefix": "#region",
+        "body": [
+            "//#region $0"
+        ],
+        "description": "Folding Region Start"
+    },
+    "Region End": {
+        "prefix": "#endregion",
+        "body": [
+            "//#endregion"
+        ],
+        "description": "Folding Region End"
+    },
+    "PhLog.info": {
+        "prefix": "info",
+        "body": [
+            "PhLog.info($1);",
+            "$0"
+        ],
+        "description": "Log info"
+    },
+    "PhLog.debug": {
+        "prefix": "debug",
+        "body": [
+            "PhLog.debug($1);",
+            "$0"
+        ],
+        "description": "Log debug"
+    },
+    "PhList.add": {
+        "prefix": "PhList.add(list, element)",
+        "body": [
+            "PhList.add(list, element$0);"
+        ],
+        "description": ""
+    },
+    "PhList.addTo": {
+        "prefix": "PhList.addTo(list, element, index)",
+        "body": [
+            "PhList.addTo(list, element, index$0);"
+        ],
+        "description": ""
+    },
+    "PhList.remove": {
+        "prefix": "PhList.remove(list, index)",
+        "body": [
+            "PhList.remove(list, index$0);"
+        ],
+        "description": ""
+    },
+    "PhList.get": {
+        "prefix": "PhList.get(...)",
+        "body": [
+            "PhList.get(...$0);"
+        ],
+        "description": ""
+    },
+    "PhList.set": {
+        "prefix": "PhList.set(...)",
+        "body": [
+            "PhList.set(...$0);"
+        ],
+        "description": ""
+    },
+    "PhList.clear": {
+        "prefix": "PhList.clear(list)",
+        "body": [
+            "PhList.clear(list$0);"
+        ],
+        "description": ""
+    },
+    "PhList.count": {
+        "prefix": "PhList.count(list)",
+        "body": [
+            "PhList.count(list$0);"
+        ],
+        "description": ""
+    },
+    "PhList.empty": {
+        "prefix": "PhList.empty(list)",
+        "body": [
+            "PhList.empty(list$0);"
+        ],
+        "description": ""
+    },
+    "PhList.contains": {
+        "prefix": "PhList.contains(list)",
+        "body": [
+            "PhList.contains(list$0);"
+        ],
+        "description": ""
+    },
+    "PhList.indexOf": {
+        "prefix": "PhList.indexOf(...)",
+        "body": [
+            "PhList.indexOf(...$0);"
+        ],
+        "description": ""
+    },
+    "PhList.isList": {
+        "prefix": "PhList.isList(obj)",
+        "body": [
+            "PhList.isList(obj$0);"
+        ],
+        "description": ""
+    },
+    "extern function": {
+        "prefix": "extern function",
+        "body": [
+            "/******************************************************************************/\n/*\n* ${1:name}\n* @author Phoebus Tecnologia <contato@phoebus.com.br>\n*return \n*/\nextern function ${1:name}()\n{\n\t${2}\n}\n"
+        ],
+        "description": "Create extern function"
+    },
+    "function": {
+        "prefix": "function",
+        "body": [
+            "/******************************************************************************/\n/*\n* ${1:name}\n* @author Phoebus Tecnologia <contato@phoebus.com.br>\n* @param ${2:params}\n* return \n*/\nfunction ${1:name}(${2:params})\n{\n\t${3}\n}\n"
+        ],
+        "description": "Create a function with params"
+    },
+    "PhLog.info": {
+        "prefix": "PhLog.info",
+        "body": [
+            "PhLog.info(${1});"
+        ],
+        "description": "Write info in log file"
+    },
+    "PhLog.debug": {
+        "prefix": "PhLog.debug",
+        "body": [
+            "PhLog.debug(${1});"
+        ],
+        "description": "Write a debug in log file"
+    },
+    "Map#create": {
+        "prefix": "Map#create",
+        "body": [
+            "var ${0:mapName} = Map#create();"
+        ],
+        "description": "Create a Map Object"
+    },
+    "Map#put": {
+        "prefix": "Map#put",
+        "body": [
+            "Map#put(${1:map},  \"${2:key}\",  \"${3:value}\");"
+        ],
+        "description": "Insert value into the Map instance"
+    }
+}
